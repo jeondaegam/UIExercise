@@ -526,6 +526,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f04b630907e0b4d9ebc9c39fd9e7b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
+  CameraShakeDuration: 0.5
+  CameraShakeStrength: 1
+  CamaraRotShakeDuration: 0.5
+  CameraRotShakeStrength: 3
   Bar: {fileID: 2027528328}
   WorldTextPf: {fileID: 5639857529062369660, guid: a6557823b6bec473d8be7153c38573c4, type: 3}
   OffSet: {x: 0, y: 0, z: 0}
@@ -638,10 +643,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7161053523404439356, guid: a6557823b6bec473d8be7153c38573c4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6557823b6bec473d8be7153c38573c4, type: 3}
 --- !u!1 &642775848
 GameObject:
