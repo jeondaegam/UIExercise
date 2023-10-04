@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
         Bar.UpdateHealth(Health, MaxHealth);
 
         //var text = Instantiate(WorldTextPf, transform.position + new Vector3(0, 0, 0), Quaternion.identity);
-        var text = Instantiate(WorldTextPf, transform.position + new Vector3(0, 0, 0) , Quaternion.identity);
+        var text = Instantiate(WorldTextPf, transform.position, Quaternion.identity);
         text.Setup(damage.ToString());
 
         // 원위치로 리셋
