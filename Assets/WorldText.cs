@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WorldText : MonoBehaviour
 {
@@ -33,12 +34,14 @@ public class WorldText : MonoBehaviour
     {
         var color = Text.color;
         // alpha값(투명도) 
-        color.a = 0; 
+        color.a = 0;
 
         Text.DOColor(color, Duration);
         //Destination = ?? 팝업 랜덤으로 뜨게하기
 
-        Destination = new Vector3(Random.Range(1, 10), transform.position.y, transform.position.z); ;
+        Destination = transform.position;
+        Destination += new Vector3(Random.Range(-1, 1), Random.Range(3, 5));
+        //Destination += new Vector3(Random.Range(-1, 1), Random.Range(-1, 1));
         // 목적지까지 이동시간동안 이동한다
         Text.transform.DOMove(Destination, Duration);
         Text.transform.DOScale(Scale, Duration)

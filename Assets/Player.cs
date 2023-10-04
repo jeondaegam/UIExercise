@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     // 따라다니는 카메라 
     public Camera Camera;
     public float CameraShakeDuration = 0.5f;
-    public float CameraShakeStrengt = 1f;
+    public float CameraShakeStrength = 1f;
     public float CamaraRotShakeDuration = 0.5f;
     public float CameraRotShakeStrength = 3f;
 
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         // 메인 카메라를 찾아 들고있는다. 비효율적이므로 사용시 주의 
-        Camera = Camera.main; 
+        Camera = Camera.main;
         Health = MaxHealth;
         Bar.ResetSlider();
     }
@@ -53,11 +53,12 @@ public class Player : MonoBehaviour
         Health = Mathf.Clamp(Health, 0, MaxHealth);
         Bar.UpdateHealth(Health, MaxHealth);
 
-        var text = Instantiate(WorldTextPf, transform.position, Quaternion.identity);
+        //var text = Instantiate(WorldTextPf, transform.position + new Vector3(0, 0, 0), Quaternion.identity);
+        var text = Instantiate(WorldTextPf, transform.position + new Vector3(0, 0, 0) , Quaternion.identity);
         text.Setup(damage.ToString());
 
         // 원위치로 리셋
-        Camera.DOComplete();  
+        Camera.DOComplete();
         Camera.DOShakeRotation(CameraShakeDuration, CameraShakeStrength);
         Camera.DOShakeRotation(CamaraRotShakeDuration, CameraRotShakeStrength);
     }
