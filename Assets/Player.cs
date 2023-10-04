@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Bar Bar;
+    public WorldText WorldTextPf;
+    public Vector3 OffSet;
 
     public int MaxHealth;
     public int Health;
@@ -39,6 +41,9 @@ public class Player : MonoBehaviour
         Health -= damage;
         Health = Mathf.Clamp(Health, 0, MaxHealth);
         Bar.UpdateHealth(Health, MaxHealth);
+
+        var text = Instantiate(WorldTextPf, transform.position, Quaternion.identity);
+        text.Setup(damage.ToString());
     }
 
     public void Heal(int heal)
